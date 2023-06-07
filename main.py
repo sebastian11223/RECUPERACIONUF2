@@ -7,6 +7,7 @@ from exercici2 import ex2part1
 from exercici2 import ex2part2
 from exercici2 import ex2part3
 from exercici3 import exercici3array, exercici3arraymin, exercici3arraymax
+from ejercicio4 import generar_array
 
 
 # Exercici 1
@@ -64,3 +65,32 @@ print("Matriz indicada por el usuario:")
 print(matriz)
 print("Valor maximo:", maximo)
 print("Valor mín:", minimo)
+
+
+#parte 4
+
+# Generar la matriz
+matriz = generar_array()
+
+# Mostrar la matriz por consola con un mensaje
+print("Matriz generada:")
+print(matriz)
+
+# Modificar la matriz para obtener una nueva matriz de 3x4
+nueva_matriz = np.transpose(matriz)
+nueva_matriz = np.vstack((nueva_matriz[:-1], nueva_matriz[-1]))
+
+# Mostrar la nueva matriz por consola con un mensaje
+print("Nueva matriz con la fila cambiada:")
+print(nueva_matriz)
+
+# Obtener el primer número de la última columna
+first_number = matriz[-1, -1]
+
+# Modificar la matriz para obtener una nueva matriz con la última columna igual al primer número
+nueva_matriz = matriz.copy()
+nueva_matriz[:, -1] = first_number
+
+# Mostrar la nueva matriz por consola con un mensaje
+print("Nueva matriz con la última columna igual al primer número:")
+print(nueva_matriz)
